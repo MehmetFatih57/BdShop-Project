@@ -5,15 +5,15 @@ import io.cucumber.junit.CucumberOptions;
 import org.junit.runner.RunWith;
 
 @RunWith(Cucumber.class)//-->Scenario çalıştırıcı notasyonu.Cucumber ile junit entegrasonunu sağlar
-@CucumberOptions(plugin = {"pretty",
+@CucumberOptions(plugin = {"pretty", //Test scenario'larinin console'da daha okunakli gorunmesini saglar
         "html:target/default-cucumber-reports.html",
         "json:target/json-reports/cucumber1.json",
         "junit:target/xml-report/cucumber.xml",
         "rerun:TestOutput/failed_scenario.txt"},
         //rerun ile belirttiğimiz dosyada fail olan senaryolar tutulur.
         features = "src/test/resources/features",
-        glue = {"education/stepDefinition"},
-        tags = "@pozitif",
+        glue = {"stepDefinition"},
+        tags = "@bdshop",
         dryRun = false,//-->true seçersek scenarioları kontrol eder browser'ı çalıştırmaz
         monochrome = true//-->true kullanırsak konsoldaki çıktılar tek renk(siyah) olur
 
